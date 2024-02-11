@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client"
 
 import styles from './message.module.css';
@@ -11,17 +12,17 @@ export default function Message({updateChatListt}){
     // only run when when the component first renders not on any other updates
     // emply array as second argument to hook is what makes this function only render
     // on initial mount
-        useEffect(()=>{
-            socketRef.current = io('http://localhost:4321')
-            socketRef.current.on('connect', ()=>{
-                updateChatListt({message: `You connected to ws with id: ${socketRef.current.id}`})
-            })    
-            // listen for incomming messages
-            socketRef.current.on('serverToClient', (mess)=>{
-                updateChatListt({'message': mess});
-            })
+        // useEffect(()=>{
+        //     socketRef.current = io('http://localhost:4321')
+        //     socketRef.current.on('connect', ()=>{
+        //         updateChatListt({message: `You connected to ws with id: ${socketRef.current.id}`})
+        //     })    
+        //     // listen for incomming messages
+        //     socketRef.current.on('serverToClient', (mess)=>{
+        //         updateChatListt({'message': mess});
+        //     })
 
-        }, []);
+        // }, []);
 
     // listen for incomming messages and add them to chatlist
     // needs to be moved to inside useEffect as I tried this and 
@@ -29,15 +30,15 @@ export default function Message({updateChatListt}){
         // socketRef.current.on()
 
     function formSubmit(e){
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const message = formData.get('message');
-        const id = formData.get('id');
-        const room = formData.get('room');
-        updateChatListt({'message': `You Sent: ${message}`});
-        socketRef.current.emit('clientToServer', {id: id, message: message, room: room})    
-        // clear message once sent
-            inputRef.current.value = '';
+        // e.preventDefault();
+        // const formData = new FormData(e.target);
+        // const message = formData.get('message');
+        // const id = formData.get('id');
+        // const room = formData.get('room');
+        // updateChatListt({'message': `You Sent: ${message}`});
+        // socketRef.current.emit('clientToServer', {id: id, message: message, room: room})    
+        // // clear message once sent
+        //     inputRef.current.value = '';
     }
 
 

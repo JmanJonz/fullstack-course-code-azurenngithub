@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client"
 import styles from "@/app/chatapp.module.css";
 import Message from "./components/Message";

@@ -1,3 +1,4 @@
+import "@/app/global.css";
 export const metadata = {
   title: 'NextJS Chat App',
   description: 'Join a chatroom and start talking with friends!',

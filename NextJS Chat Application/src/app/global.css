@@ -4,3 +4,86 @@ html, body{
     margin: 0px;
     padding: 0px;
 }
+/* Reset default margin and padding */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Consistent sizing with padding and border */
+}
+
+/* Reset list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset font styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px; /* Base font size */
+  line-height: 1.5; /* Base line height */
+  color: #333; /* Base text color */
+}
+
+/* Reset headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; /* Remove default margin */
+  font-weight: normal; /* Remove default bold weight */
+  font-size: 1.5em, 1.25em, 1em, 0.875em, 0.75em, 0.625em; /* Adjust according to your hierarchy */
+}
+
+/* Reset images */
+img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure inline images behave like block elements */
+}
+
+/* Reset links */
+a {
+  color: #007bff; /* Base link color */
+  text-decoration: none; /* Remove default underline */
+  cursor: pointer;
+}
+
+/* Reset focus styles */
+:focus {
+  outline: 0; /* Remove default outline */
+}
+
+/* Reset form elements */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Inherit font styles from body */
+  padding: 0.5em 1em; /* Consistent padding */
+  border: 1px solid #ccc; /* Base border style */
+  border-radius: 4px; /* Subtle border radius */
+}
+
+/* Reset table styles */
+table {
+  border-collapse: collapse; /* Consistent border collapse */
+}
+
+/* Reset inline-block elements */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: #fff;
+  color: inherit;
+  border: none;
+  padding: 0.25em 0.5em;
+  line-height: 1.25;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent wrapping */
+}

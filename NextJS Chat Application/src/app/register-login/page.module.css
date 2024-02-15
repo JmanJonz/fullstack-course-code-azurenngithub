@@ -1,0 +1,25 @@
+.main{
+    background-color: #5B2A86;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #A5E6BA solid 5px;
+}
+.form{
+    background-color: #A5E6BA ;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    padding: 30px;
+}
+.formKid{
+    box-sizing: border-box;
+    margin: 5px;
+    width: 80%;
+}
+.justButton{
+    width: 83%;
+}

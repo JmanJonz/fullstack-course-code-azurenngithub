@@ -6,6 +6,14 @@
     grid-row: 4/5;
 }
 
+.form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 .input{
     background-color: #5B2A86;
     font-size: 30px;
@@ -21,8 +29,11 @@
     outline: none;
 }
 .inputOnly{
-    width: 400px;
+    width: 90%;
+    height: 80px;
 }
 .button{
-    cursor: pointer;
+    cursor: pointer;    
+    height: 85px;
+    padding-inline: 25px;
 }

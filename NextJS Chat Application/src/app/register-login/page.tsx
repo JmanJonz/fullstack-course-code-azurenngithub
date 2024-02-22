@@ -3,13 +3,13 @@
 import React from 'react';
 import styles from "@/app/register-login/page.module.css";
 import prisma from '../../../prisma/prismaSingleton';
+import { useEffect } from 'react';
 
 // function that handles login / register
   async function handleLogin(e){
     e.preventDefault();
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
-    console.log(`${email} ${password}`);
     const emailInput = document.querySelector("#email");
     const passwordInput = document.querySelector("#password");
     emailInput.value = "";
@@ -26,9 +26,18 @@ import prisma from '../../../prisma/prismaSingleton';
       })
       const responseMessage = await response.json();
                               console.log(responseMessage);
+      // set jwt in local storage for later verification
+        localStorage.setItem("loggedInJWT", responseMessage.jwt)
+      // redirect logged in user to chat home page
+        window.location.href = "/";
   }
 
-const registerLogin = () => {
+export default function RegisterLogin(){
+  // loguser out when they come here
+  useEffect(()=>{
+    localStorage.setItem("loggedInJWT", "");
+  }, [])
+
   return (
     <main className={styles.main}>
         <form onSubmit={handleLogin} className={styles.form}>
@@ -43,5 +52,3 @@ const registerLogin = () => {
     </main>
   )
 }
-
-export default registerLogin;

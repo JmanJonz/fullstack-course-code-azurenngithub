@@ -6,13 +6,14 @@ import { useEffect, useState, useRef } from 'react';
 import isAuth from '../modules/isAuth';
 
 export default function MessageList(){
-    const [authorized, setAuthorized] = useState(localStorage.getItem("loggedInJWT"));
-    const [logginEmail, setLogginEmail] = useState(localStorage.getItem("logginEmail"));
+    const [authorized, setAuthorized] = useState(null);
+    const [logginEmail, setLogginEmail] = useState(null);
     const [userMessages, setUserMessages] = useState(null);
 
     useEffect(()=>{
         async function asyncEffect(){
-                                    console.log("async effect ran")
+            setAuthorized(localStorage.getItem("loggedInJWT"))
+            setLogginEmail(localStorage.getItem("logginEmail"))
             const messages = await fetch("http://localhost:3000/api/messageRoutes");
             const messsiages = await messages.json();
             setUserMessages(messsiages);

@@ -5,11 +5,12 @@ import styles from './message.module.css';
 import { useState } from 'react';
 
 export default function Message(){
-    const [authorized, setAuthorized] = useState(localStorage.getItem("loggedInJWT"));
-    const [logginEmail, setLogginEmail] = useState(localStorage.getItem("logginEmail"));
-
+    const [authorized, setAuthorized] = useState(null);
+    const [logginEmail, setLogginEmail] = useState(null);
     async function handleMessageSend(e){
         e.preventDefault();
+        setAuthorized(localStorage.getItem("loggedInJWT"));
+        setLogginEmail(localStorage.getItem("logginEmail"))
         const toEmail = e.target.elements.toEmail.value;
         const message = e.target.elements.message.value;
         const messageElement = document.querySelector("#message");

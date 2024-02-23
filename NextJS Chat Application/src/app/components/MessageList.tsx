@@ -27,7 +27,7 @@ export default function MessageList(){
                 <a className={(authorized) ? styles.showNav : styles.dontShowNav} href="/register-login">Signed In As {logginEmail} Logout</a>
                 <a className={(!authorized) ? styles.showNav : styles.dontShowNav} href="/register-login">Login</a>
             </nav>
-            <ul>
+            <ul className={styles.messageScroll}>
                 {userMessages && userMessages.map((message)=>{
                     if(message.senderEmail === logginEmail){
                         return <li className={styles.sentMessages} key={message.id}>You Sent -- {message.messageText} -- To {message.receiverEmail}</li>

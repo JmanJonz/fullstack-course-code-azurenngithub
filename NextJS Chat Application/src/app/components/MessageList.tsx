@@ -14,7 +14,7 @@ export default function MessageList(){
         async function asyncEffect(){
             setAuthorized(localStorage.getItem("loggedInJWT"))
             setLogginEmail(localStorage.getItem("logginEmail"))
-            const messages = await fetch("http://localhost:3000/api/messageRoutes");
+            const messages = await fetch("/api/messageRoutes");
             const messsiages = await messages.json();
             setUserMessages(messsiages);
         }

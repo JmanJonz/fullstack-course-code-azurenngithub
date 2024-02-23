@@ -16,7 +16,7 @@ export default function Message(){
         const messageElement = document.querySelector("#message");
         messageElement.value = "";
         // post a new message
-            const res = await fetch("http://localhost:3000/api/messageRoutes", {
+            const res = await fetch("/api/messageRoutes", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({              

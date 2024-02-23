@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a very simple nextjs chat application that me and my family and friends can use for fun.
 
-## Getting Started
+click login in order to login or create an account with a single button click it will check if you already have an account and if you don't it will create one for you.
 
-First, run the development server:
+upon creating an account password is hashed and you are logged in
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+logged in as in a jwt is created for you with your email signing it saying that you are verified to access things to your unique account. this jwt is sent down to the client and stored in local storage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+click logout to be taken back to the login page
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+you can type a message and then send it to anyone with an existing email in the database if they don't have an email the message will not be created. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+every 5 seconds the messages refresh so you get the most up todate messages coming to your inbox. 
 
-## Learn More
+all messages persist and will come back if you logout and log back in
 
-To learn more about Next.js, take a look at the following resources:
+it's just a fun little chat project for me, my family, and friends to play around with.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

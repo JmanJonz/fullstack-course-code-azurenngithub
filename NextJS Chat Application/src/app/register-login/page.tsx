@@ -28,6 +28,8 @@ import { useEffect } from 'react';
                               console.log(responseMessage);
       // set jwt in local storage for later verification
         localStorage.setItem("loggedInJWT", responseMessage.jwt)
+        // also set login email to be displayed
+          localStorage.setItem("logginEmail", email);
       // redirect logged in user to chat home page
         window.location.href = "/";
   }
@@ -36,6 +38,7 @@ export default function RegisterLogin(){
   // loguser out when they come here
   useEffect(()=>{
     localStorage.setItem("loggedInJWT", "");
+    localStorage.setItem("logginEmail", "");
   }, [])
 
   return (

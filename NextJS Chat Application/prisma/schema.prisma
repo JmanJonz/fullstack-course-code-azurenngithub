@@ -19,14 +19,19 @@ model User{
   password String
 }
 
-// model Message{
-//   id String @id @default(auto()) @map("_id") @db.ObjectId
-//   chatRoom ChatRoom @relation(fields: [chatRoomId], references: [id]);
-//   chatRoomId String @db.ObjectId
-// }
+model Message{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  senderEmail String
+  receiverEmail String
+  messageText String
+  createdAt DateTime @default(now())
+  // chatRoom ChatRoom @relation(fields: [chatRoomId], references: [id])
+  // chatRoomId String @db.ObjectId
+}
 
 // model ChatRoom{
 //   id String @id @default(auto()) @map("_id") @db.ObjectId
-//   name String @unique
+//   user1Email String
+//   user2Email String
 //   messages Message[]
 // }

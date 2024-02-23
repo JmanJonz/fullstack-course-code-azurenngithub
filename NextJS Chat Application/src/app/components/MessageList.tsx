@@ -30,10 +30,10 @@ export default function MessageList(){
             <ul>
                 {userMessages && userMessages.map((message)=>{
                     if(message.senderEmail === logginEmail){
-                        return <li key={message.id}>You Sent -- {message.messageText} -- To {message.receiverEmail}</li>
+                        return <li className={styles.sentMessages} key={message.id}>You Sent -- {message.messageText} -- To {message.receiverEmail}</li>
                     }
                     if(message.receiverEmail === logginEmail){
-                        return <li key={message.id}>{message.senderEmail} -- Sent You -- {message.messageText}</li>
+                        return <li className={styles.receivedMessages} key={message.id}>{message.senderEmail} -- Sent You -- {message.messageText}</li>
                     }
                 })}
             </ul>

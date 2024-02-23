@@ -4,9 +4,24 @@
     grid-row: 1/4;
 }
 .showNav{
-
+    display: block;
+    padding: 4px;
+    margin: 5px auto;
+    font-size: 20px;
 }
 
 .dontShowNav{
     display: none;
+}
+.sentMessages{
+    padding: 5px;
+    font-size: 14;
+    margin-left: 5px;
+    background-color: #c3d3d2;
+    margin-block: 1px;
+}
+.receivedMessages{
+    padding: 5px;
+    font-size: 14;
+    font-weight: bold;
 }
